@@ -32,6 +32,7 @@ function reducer(state = initialState, action) {
                     error: action.payload
                 }
             default:
+                console.log(state)
                 return state
     }
 }
