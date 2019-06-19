@@ -7,15 +7,11 @@ import Login from '../components/Login';
 
 class LoginView extends React.Component {
 
-    logon = e => {
-        e.preventDefault();
-        this.props.login();
-    }
-
     render() {
+        console.log(this.logon)
         return (
             <div className='login'>
-                <Login error={this.props.error} login={this.props.loggingIn} logon={this.props.logon} />
+                <Login error={this.props.error} login={this.props.loggingIn} logon={this.props.login} />
             </div>
         )
     }
