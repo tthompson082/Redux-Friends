@@ -1,11 +1,14 @@
 import React from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-    </div>
-  );
+import { LoginView } from './views';
+
+class App extends React.Component {
+  render() {
+    return (
+      <LoginView />
+    )
+  }
 }
 
 export default App;
