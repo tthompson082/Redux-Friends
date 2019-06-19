@@ -7,7 +7,8 @@ const initialState = {
     loggingIn: false,
     savingFriends: false,
     updatingFriend: false,
-    error: null
+    error: null,
+    token: null
 }
 
 function reducer(state = initialState, action) {
@@ -19,6 +20,7 @@ function reducer(state = initialState, action) {
                 loggingIn: true
             }
             case LOGIN_SUCCESS:
+                console.log(action.payload)
                 return {
                     ...state,
                     loggingIn: false,
