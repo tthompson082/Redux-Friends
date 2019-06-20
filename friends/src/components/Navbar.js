@@ -28,6 +28,9 @@ class FriendsNavbar extends React.Component {
                             <NavItem>
                                 <NavLink href='/login' className='text-light'><h3>Login</h3></NavLink>
                             </NavItem>
+                            <NavItem>
+                                <NavLink href='/add-friend' className='text-light'><h3>Add A Friend</h3></NavLink>
+                            </NavItem>
                         </Nav>
                     </Collapse>
                 </Navbar>

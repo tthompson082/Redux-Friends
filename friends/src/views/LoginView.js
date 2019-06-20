@@ -7,11 +7,20 @@ import Login from '../components/Login';
 
 class LoginView extends React.Component {
 
+    login = creds => {
+            this.props.login(creds)
+            .then(res => {
+                if (res) {
+                    this.props.history.push('/friends')
+                }
+            })
+        }
+
     render() {
         console.log(this.props.loggingIn)
         return (
             <div className='login'>
-                <Login error={this.props.error} login={this.props.loggingIn} logon={this.props.login} />
+                <Login error={this.props.error} login={this.props.loggingIn} logon={this.login} />
             </div>
         )
     }

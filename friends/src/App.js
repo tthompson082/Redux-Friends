@@ -5,16 +5,19 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { LoginView, FriendsListView } from './views';
 import FriendsNavbar from './components/Navbar';
 import HomePage from './components/HomePage';
+import PrivateRoute from './components/PrivateRoute';
+import FriendForm from './components/FriendForm'
 
 class App extends React.Component {
   render() {
     return (
       <Router>
-        <div className='bg-light vh-100'>
+        <div>
           <FriendsNavbar />
           <Route exact path='/' component={HomePage} />
           <Route path='/login' component={LoginView} />
-          <Route path='/friends' component={FriendsListView} />
+          <PrivateRoute exact path='/friends' component={FriendsListView} />
+          <PrivateRoute exact path='/add-friend' component={FriendForm} />
         </div>
       </Router>
     )

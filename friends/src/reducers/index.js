@@ -1,4 +1,4 @@
-import { LOGIN, LOGIN_SUCCESS, LOGIN_FAILED, FETCHING_DATA, FETCHING_FAILURE, FETCHING_SUCCESS } from '../actions';
+import { LOGIN, LOGIN_SUCCESS, LOGIN_FAILED, FETCHING_DATA, FETCHING_FAILURE, FETCHING_SUCCESS, ADD_FRIEND, ADD_SUCCESS, ADD_FAILED } from '../actions';
 
 const initialState = {
     deletingFriend: false,
@@ -46,6 +46,20 @@ function reducer(state = initialState, action) {
                 return {
                     ...state,
                     fetchingFriends: false,
+                    error: action.payload
+                }
+            case ADD_FRIEND:
+                return {
+                    ...state,
+                }
+            case ADD_SUCCESS:
+                return {
+                    ...state,
+                    friends: action.payload
+                }
+            case ADD_FAILED:
+                return {
+                    ...state,
                     error: action.payload
                 }
             default:

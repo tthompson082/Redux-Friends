@@ -6,24 +6,25 @@ class Login extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            username: '',
-            password: ''
+            credentials: {
+                username: '',
+                password: ''
+            }
         }
     }
 
     handleChanges = e => {
         this.setState({
-            [e.target.name]: e.target.value
+            credentials: {
+                ...this.state.credentials,
+                [e.target.name]: e.target.value
+            }
         });
     };
 
     loggingIn = e => {
         e.preventDefault();
-        this.props.logon();
-        this.setState({
-            username: '',
-            password: ''
-        })
+        this.props.logon(this.state.credentials)
     }
 
     render() {
@@ -40,11 +41,11 @@ class Login extends React.Component {
                         <Form onSubmit={this.loggingIn}>
                             <FormGroup>
                                 <Label for='username'>Username</Label>
-                                <Input onChange={this.handleChanges} required type='username' name='username' id='username' placeholder='Username' value={this.state.username} />
+                                <Input onChange={this.handleChanges} required type='username' name='username' id='username' placeholder='Username' value={this.state.credentials.username} />
                             </FormGroup>
                             <FormGroup>
                                 <Label for='password'>Password</Label>
-                                <Input onChange={this.handleChanges} required type='password' name='password' id='password' placeholder='Password' value={this.state.password} />
+                                <Input onChange={this.handleChanges} required type='password' name='password' id='password' placeholder='Password' value={this.state.credentials.password} />
                             </FormGroup>
                             <FormGroup className='float-right'>
                                 {(this.props.login) ? <Spinner size='lg' color='primary' /> : <Button color='primary' size='lg'>Login</Button>}
