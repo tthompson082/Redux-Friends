@@ -8,7 +8,6 @@ const initialState = {
     savingFriends: false,
     updatingFriend: false,
     error: null,
-    token: null
 }
 
 function reducer(state = initialState, action) {
@@ -24,7 +23,6 @@ function reducer(state = initialState, action) {
                 return {
                     ...state,
                     loggingIn: false,
-                    token: action.payload
                 }
             case LOGIN_FAILED:
                 return {
