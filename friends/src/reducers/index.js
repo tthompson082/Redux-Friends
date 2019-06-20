@@ -25,8 +25,10 @@ function reducer(state = initialState, action) {
                     loggingIn: false,
                 }
             case LOGIN_FAILED:
+                console.log(action.payload)
                 return {
                     ...state,
+                    loggingIn: false,
                     error: action.payload
                 }
             case FETCHING_DATA:

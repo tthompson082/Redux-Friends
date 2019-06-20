@@ -1,5 +1,6 @@
 import React from 'react';
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, Button } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 class FriendsNavbar extends React.Component {
     constructor() {
@@ -12,6 +13,11 @@ class FriendsNavbar extends React.Component {
         this.setState({
             collapsed: !this.state.collapsed
         })
+    }
+
+    logout = e => {
+        e.preventDefault();
+        localStorage.clear();
     }
 
     render() {
@@ -33,6 +39,7 @@ class FriendsNavbar extends React.Component {
                             </NavItem>
                         </Nav>
                     </Collapse>
+                    <Button color='light' onClick={this.logout}><Link to='/'>Logout</Link></Button>
                 </Navbar>
             </div>
         )

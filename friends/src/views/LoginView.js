@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { login } from '../actions';
+import { Alert } from 'reactstrap';
 
 import Login from '../components/Login';
 
@@ -12,7 +13,7 @@ class LoginView extends React.Component {
             .then(res => {
                 if (res) {
                     this.props.history.push('/friends')
-                }
+                } 
             })
         }
 
@@ -21,6 +22,7 @@ class LoginView extends React.Component {
         return (
             <div className='login'>
                 <Login error={this.props.error} login={this.props.loggingIn} logon={this.login} />
+                {(this.props.error) && <div className='col-4 mr-auto ml-auto'><Alert color='danger'>Incorrect Username or Password</Alert></div>}
             </div>
         )
     }

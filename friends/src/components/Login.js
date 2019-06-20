@@ -1,5 +1,5 @@
 import React from 'react';
-import { Spinner, Card, CardBody, CardTitle, Form, FormGroup, Label, Input, Button} from 'reactstrap';
+import { Spinner, Card, CardBody, CardTitle, Form, FormGroup, Label, Input, Button } from 'reactstrap';
 
 
 class Login extends React.Component {
