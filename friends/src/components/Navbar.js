@@ -18,7 +18,7 @@ class FriendsNavbar extends React.Component {
         return (
             <div>
                 <Navbar color='secondary' light>
-                    <NavbarBrand className='mr-auto text-light'><h1>Friends List!</h1></NavbarBrand>
+                    <NavbarBrand href='/' className='mr-auto text-light'><h1>Friends List!</h1></NavbarBrand>
                     <NavbarToggler onClick={this.toggleNavbar} className='mr-2 bg-light' />
                     <Collapse isOpen={!this.state.collapsed} navbar>
                         <Nav navbar>

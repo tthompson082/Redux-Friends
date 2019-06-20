@@ -1,4 +1,4 @@
-import axios from 'axios';
+
 
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 
@@ -22,7 +22,7 @@ export const FETCHING_DATA = 'FETCHING_DATA';
 export const FETCHING_SUCCESS = 'FETCHING_SUCCESS';
 export const FETCHING_FAILURE = 'FETCHING_FAILURE';
 
-export const getData = () => dispatch => {
+export const getFriends = () => dispatch => {
     dispatch({ type: FETCHING_DATA });
     axiosWithAuth()
     .get('/friends')
